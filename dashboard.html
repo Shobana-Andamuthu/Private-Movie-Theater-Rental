@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard — VELLORA Private Theaters</title>
+  <meta name="description" content="Manage your private movie theater reservations, movie vault selections, snack pre-orders, and payments in your VELLORA client portal.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <!-- ==================== CINEMATIC PAGE PRELOADER ==================== -->
+  <div id="vellora-preloader" class="vellora-preloader" aria-hidden="true">
+    <div class="preloader-backdrop"></div>
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <svg class="preloader-film-reel" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="44" stroke="rgba(242, 201, 138, 0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+          <circle cx="50" cy="50" r="38" stroke="url(#preloadRingGrad)" stroke-width="3" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="preloadRingGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A"/>
+              <stop offset="50%" stop-color="#6B2D5C"/>
+              <stop offset="100%" stop-color="#F2C98A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg class="preloader-brand-icon" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#preloadLogoGrad)" stroke-width="2.5" />
+          <circle cx="8" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+          <circle cx="40" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+          <polygon points="16,16 34,24 16,32" fill="url(#preloadBeamGrad)" />
+          <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+          <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+          <defs>
+            <linearGradient id="preloadLogoGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6B2D5C" />
+              <stop offset="50%" stop-color="#5B315F" />
+              <stop offset="100%" stop-color="#F2C98A" />
+            </linearGradient>
+            <linearGradient id="preloadBeamGrad" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.15" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="preloader-brand-title">VELLORA</div>
+      <div class="preloader-status-text">
+        <span class="preloader-status-dot"></span>
+        CALIBRATING PRIVATE CINEMA
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DASHBOARD DEDICATED HEADER (MATCHING REFERENCE) ==================== -->
+  <header class="dash-top-header">
+    <div class="dash-nav-container">
+      <!-- Left: Logo + Brand Name + Subtitle -->
+      <a href="index.html" class="brand-wrapper" style="align-items: center; gap: 14px;" aria-label="VELLORA Home">
+        <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none" style="width: 42px; height: 42px;">
+          <defs>
+            <linearGradient id="navLogoGradD" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6B2D5C" />
+              <stop offset="50%" stop-color="#5B315F" />
+              <stop offset="100%" stop-color="#F2C98A" />
+            </linearGradient>
+            <linearGradient id="navBeamGradD" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.1" />
+            </linearGradient>
+          </defs>
+          <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#navLogoGradD)" stroke-width="2.5" />
+          <circle cx="8" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+          <circle cx="40" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+          <polygon points="16,16 34,24 16,32" fill="url(#navBeamGradD)" />
+          <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+          <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+        </svg>
+        <div class="dash-brand-info">
+          <span class="dash-brand-title">VELLORA</span>
+          <span class="dash-brand-sub">Private Cinema Suites</span>
+        </div>
+      </a>
+
+      <!-- Right: Controls (Theme Toggle, RTL Toggle, Back to Site, Log Out) -->
+      <div class="dash-top-actions">
+        <button class="control-toggle-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="control-toggle-btn rtl-toggle-btn" aria-label="Toggle Direction" title="Toggle RTL/LTR">RTL</button>
+        <a href="index.html" class="btn-back-site" title="Back to Site">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span class="back-text">Back to Site</span>
+        </a>
+        <a href="login.html" class="btn-logout" title="Log Out">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span class="logout-text">Log Out</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE HORIZONTAL TABS BAR (MATCHING REFERENCE) ==================== -->
+  <nav class="dash-horizontal-tabs-bar" aria-label="Dashboard Tabs Navigation">
+    <div class="dash-tabs-scroll-container">
+      <button class="dash-tab-pill active" data-tab="overview">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Overview
+      </button>
+      <button class="dash-tab-pill" data-tab="book">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Room
+      </button>
+      <button class="dash-tab-pill" data-tab="reservations">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        My Reservations
+      </button>
+      <button class="dash-tab-pill" data-tab="movies">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        Movie Selection
+      </button>
+      <button class="dash-tab-pill" data-tab="snacks">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+        Snack Packages
+      </button>
+      <button class="dash-tab-pill" data-tab="history">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Booking History
+      </button>
+      <button class="dash-tab-pill" data-tab="payments">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Payments
+      </button>
+      <button class="dash-tab-pill" data-tab="profile">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile Settings
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="dashboard-layout">
+      <!-- DASHBOARD SIDEBAR -->
+      <aside class="dashboard-sidebar" id="dashboard-sidebar">
+        <button class="dash-sidebar-close-btn" id="dash-sidebar-close" aria-label="Close Navigation">&times;</button>
+        <div class="dash-user-card">
+          <div class="dash-avatar">ER</div>
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 2px;">Elena Rostova</h4>
+            <span style="font-size: 0.8rem; color: var(--color-muted);">VIP Member &bull; #VEL-8921</span>
+          </div>
+        </div>
+
+        <ul class="dash-menu">
+          <li class="dash-menu-item active" data-tab="overview">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Overview
+          </li>
+          <li class="dash-menu-item" data-tab="book">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book a Room
+          </li>
+          <li class="dash-menu-item" data-tab="reservations">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            My Reservations
+          </li>
+          <li class="dash-menu-item" data-tab="movies">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            Movie Selection
+          </li>
+          <li class="dash-menu-item" data-tab="snacks">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+            Snack Packages
+          </li>
+          <li class="dash-menu-item" data-tab="history">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Booking History
+          </li>
+          <li class="dash-menu-item" data-tab="payments">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Payments
+          </li>
+          <li class="dash-menu-item" data-tab="profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Profile Settings
+          </li>
+        </ul>
+      </aside>
+
+      <!-- DASHBOARD MAIN CONTENT -->
+      <div class="dashboard-main">
+        <!-- ==================== TAB 1: OVERVIEW ==================== -->
+        <div class="dash-tab-pane active" id="tab-overview">
+          <div class="dash-header-bar">
+            <div>
+              <h2>Screening Portal</h2>
+              <p>Welcome back, Elena. Your upcoming private screening is confirmed.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-tab=\'book\']').click()">+ New Reservation</button>
+          </div>
+
+          <!-- Quick Stats Cards -->
+          <div class="dash-stats-grid">
+            <div class="stat-card">
+              <div class="stat-card-title">Next Screening</div>
+              <div class="stat-card-val" style="color: var(--color-accent); font-size: 1.4rem;">Friday, 8:00 PM</div>
+              <span style="font-size: 0.8rem; color: var(--color-muted);">In 2 Days &bull; Countdown Active</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-title">Reserved Suite</div>
+              <div class="stat-card-val" style="font-size: 1.4rem;">The Noir Sanctuary</div>
+              <span style="font-size: 0.8rem; color: var(--color-muted);">Suite #04 &bull; 8 Guests</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-title">Reservation Status</div>
+              <div class="stat-card-val" style="color: #10B981; font-size: 1.4rem;">Confirmed</div>
+              <span style="font-size: 0.8rem; color: var(--color-muted);">QR Keycard Generated</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-title">Payment Status</div>
+              <div class="stat-card-val" style="color: var(--color-warm); font-size: 1.4rem;">Paid in Full</div>
+              <span style="font-size: 0.8rem; color: var(--color-muted);">$290.00 &bull; Inv #9812</span>
+            </div>
+          </div>
+
+          <!-- Spotlight Upcoming Screening Banner Card -->
+          <div class="cinema-card" style="margin-bottom: 36px; border-color: rgba(242,201,138,0.4); box-shadow: var(--shadow-md); padding: 0; overflow: hidden;">
+            <div class="dash-spotlight-card-grid">
+              <div class="dash-spotlight-content">
+                <div>
+                  <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                    <span class="eyebrow eyebrow-warm">✦ Confirmed Showtime</span>
+                    <span class="eyebrow" style="background: rgba(16,185,129,0.15); color: #10B981;">Doors Open 7:45 PM</span>
+                  </div>
+                  <h3 style="font-size: 1.5rem; margin-bottom: 8px;">The Noir Sanctuary &bull; Friday Night Premiere</h3>
+                  <p style="font-size: 0.95rem; margin-bottom: 18px;">Selected Title: <strong>Interstellar (4K IMAX Remaster)</strong> with Dolby Atmos 9.2.4 calibration.</p>
+                  
+                  <div class="form-row-2col" style="margin-bottom: 20px; font-size: 0.9rem; gap: 10px;">
+                    <div><strong>Date:</strong> Sep 25, 2026</div>
+                    <div><strong>Time:</strong> 8:00 PM – 11:00 PM</div>
+                    <div><strong>Concession Bundle:</strong> VIP Grazing Box</div>
+                    <div><strong>Butler Station:</strong> Suite #04</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <button class="btn btn-primary btn-sm" onclick="window.showVelloraToast('QR Check-In Keycard saved to Apple Wallet / Google Pass!')">View QR Keycard</button>
+                  <button class="btn btn-outline btn-sm" onclick="document.querySelector('[data-tab=\'snacks\']').click()">Modify Snacks</button>
+                </div>
+              </div>
+
+              <div class="dash-spotlight-media">
+                <img src="assets/images/hero-home-cinema.jpg" alt="Upcoming Screening Room">
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Bookings Table -->
+          <div class="comparison-table-wrapper">
+            <div class="table-header-bar">
+              <h3>Recent Screening Activity</h3>
+              <span class="table-header-subtitle">Showing last 3 screenings</span>
+            </div>
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Suite</th>
+                  <th>Date &amp; Time</th>
+                  <th>Film / Media</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#VEL-9812</strong></td>
+                  <td>The Noir Sanctuary</td>
+                  <td>Sep 25, 2026 &bull; 8:00 PM</td>
+                  <td>Interstellar (4K HDR)</td>
+                  <td>$290.00</td>
+                  <td><span style="color: #10B981; font-weight: 700;">● Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#VEL-8401</strong></td>
+                  <td>Velvet Starlight Duo</td>
+                  <td>Aug 14, 2026 &bull; 7:30 PM</td>
+                  <td>Casablanca (Criterion)</td>
+                  <td>$130.00</td>
+                  <td><span style="color: var(--color-muted); font-weight: 600;">Completed</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#VEL-7193</strong></td>
+                  <td>Celebration Suite</td>
+                  <td>Jul 03, 2026 &bull; 6:00 PM</td>
+                  <td>Spider-Man: Across the Spider-Verse</td>
+                  <td>$350.00</td>
+                  <td><span style="color: var(--color-muted); font-weight: 600;">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ==================== TAB 2: BOOK A ROOM ==================== -->
+        <div class="dash-tab-pane" id="tab-book">
+          <div class="dash-header-bar">
+            <div>
+              <h2>Reserve a Screening Suite</h2>
+              <p>Book your date, room, and media preference</p>
+            </div>
+          </div>
+
+          <div class="cinema-card" style="padding: 32px; max-width: 800px;">
+            <form onsubmit="event.preventDefault(); window.showVelloraToast('Reservation submitted! Added to My Reservations.'); document.querySelector('[data-tab=\'overview\']').click();">
+              <div class="form-group">
+                <label class="form-label">1. Choose Theater Suite</label>
+                <select class="form-control" required>
+                  <option>Velvet Starlight Duo (2 Guests) — $130 / 2.5 hrs</option>
+                  <option>Artisan Family Lounge (4–6 Guests) — $195 / 2.5 hrs</option>
+                  <option selected>The Noir Sanctuary (8–10 Guests) — $290 / 3.0 hrs</option>
+                  <option>Celebration Suite (10–14 Guests) — $350 / 3.0 hrs</option>
+                  <option>Gamers &amp; Streamers Den (6–8 Guests) — $240 / 3.0 hrs</option>
+                  <option>Grand Private Auditorium (Up to 16 Guests) — $450 / 3.5 hrs</option>
+                </select>
+              </div>
+
+              <div class="form-row-2col">
+                <div class="form-group">
+                  <label class="form-label">2. Screening Date</label>
+                  <input type="date" class="form-control" required value="2026-10-12">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">3. Time Slot</label>
+                  <select class="form-control" required>
+                    <option>1:00 PM – 3:30 PM (Matinee)</option>
+                    <option>4:30 PM – 7:00 PM (Sunset)</option>
+                    <option selected>8:00 PM – 11:00 PM (Prime Time)</option>
+                    <option>11:30 PM – 2:00 AM (Late Night)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">4. Select Movie from Vault or Bring Your Own</label>
+                <input type="text" class="form-control" placeholder="e.g. Dune: Part Two (4K) OR 'Bringing PS5 Console'" value="Dune: Part Two (4K HDR Atmos)">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">5. Optional Concession Bundle</label>
+                <select class="form-control">
+                  <option>None (A la carte ordering in-seat)</option>
+                  <option>The Date Night Duo (+$48)</option>
+                  <option selected>VIP Premier Grazing Platter (+$110)</option>
+                  <option>Family Feast Box (+$75)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 12px; width: 100%;">Confirm &amp; Proceed to Checkout</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ==================== TAB 3: MY RESERVATIONS ==================== -->
+        <div class="dash-tab-pane" id="tab-reservations">
+          <div class="dash-header-bar">
+            <div>
+              <h2>My Screening Passes</h2>
+              <p>Active and past reservation passes with instant QR entry keys</p>
+            </div>
+          </div>
+
+          <div class="cinema-card" style="padding: 24px; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+              <div>
+                <span class="eyebrow" style="background: rgba(16,185,129,0.15); color: #10B981;">● Active Pass #VEL-9812</span>
+                <h3 style="margin: 8px 0 4px 0;">The Noir Sanctuary &bull; Friday, Sep 25</h3>
+                <p style="font-size: 0.9rem;">8:00 PM – 11:00 PM &bull; 8 Guests &bull; Interstellar 4K</p>
+              </div>
+              <button class="btn btn-warm btn-sm" onclick="window.showVelloraToast('QR Entry Code: [VEL-9812-PRO]')">Display QR Pass</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TAB 4: MOVIE SELECTION ==================== -->
+        <div class="dash-tab-pane" id="tab-movies">
+          <div class="dash-header-bar">
+            <div>
+              <h2>Film Vault Browser</h2>
+              <p>Queue movies directly to your upcoming suite</p>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="cinema-card" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
+              <h4 style="margin-bottom: 6px;">Interstellar (4K IMAX)</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1;">Sci-Fi &bull; 2h 49m &bull; Dolby Atmos 9.2.4</p>
+              <button class="btn btn-primary btn-sm" style="width: 100%; margin-top: auto;" onclick="window.showVelloraToast('Queued Interstellar to Friday screening!')">Queued for Sep 25</button>
+            </div>
+            <div class="cinema-card" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
+              <h4 style="margin-bottom: 6px;">Blade Runner 2049</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1;">Sci-Fi Noir &bull; 2h 44m &bull; 4K HDR10</p>
+              <button class="btn btn-outline btn-sm" style="width: 100%; margin-top: auto;" onclick="window.showVelloraToast('Queued Blade Runner 2049 to your watchlist!')">Add to Watchlist</button>
+            </div>
+            <div class="cinema-card" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
+              <h4 style="margin-bottom: 6px;">Spirited Away (Studio Ghibli)</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1;">Animation &bull; 2h 05m &bull; Japanese / English 4K</p>
+              <button class="btn btn-outline btn-sm" style="width: 100%; margin-top: auto;" onclick="window.showVelloraToast('Queued Spirited Away to your watchlist!')">Add to Watchlist</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TAB 5: SNACK PACKAGES ==================== -->
+        <div class="dash-tab-pane" id="tab-snacks">
+          <div class="dash-header-bar">
+            <div>
+              <h2>Pre-Order Concessions</h2>
+              <p>Add chef-crafted treats to be ready at your seat upon arrival</p>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="cinema-card" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
+              <h4 style="margin-bottom: 6px;">Truffle Popcorn Bowl</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1;">Warm non-GMO corn with Italian black truffle oil.</p>
+              <button class="btn btn-primary btn-sm" style="width: 100%; margin-top: auto;" onclick="window.showVelloraToast('Added 1x Truffle Popcorn to reservation!')">Add ($14)</button>
+            </div>
+            <div class="cinema-card" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
+              <h4 style="margin-bottom: 6px;">Wagyu Sliders Trio</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1;">Three Japanese Wagyu mini burgers with gruyere.</p>
+              <button class="btn btn-primary btn-sm" style="width: 100%; margin-top: auto;" onclick="window.showVelloraToast('Added Wagyu Sliders to reservation!')">Add ($22)</button>
+            </div>
+            <div class="cinema-card" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
+              <h4 style="margin-bottom: 6px;">Craft Mocktail Trio</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1;">Three sparkling botanical infusions over spheres.</p>
+              <button class="btn btn-primary btn-sm" style="width: 100%; margin-top: auto;" onclick="window.showVelloraToast('Added Mocktail Trio to reservation!')">Add ($24)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TAB 6: BOOKING HISTORY ==================== -->
+        <div class="dash-tab-pane" id="tab-history">
+          <div class="dash-header-bar">
+            <div>
+              <h2>Screening History</h2>
+              <p>Your complete archive of past private theater rentals</p>
+            </div>
+          </div>
+
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Room Name</th>
+                  <th>Movie</th>
+                  <th>Duration</th>
+                  <th>Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aug 14, 2026</td>
+                  <td>Velvet Starlight Duo</td>
+                  <td>Casablanca</td>
+                  <td>2.5 Hours</td>
+                  <td><a href="#" onclick="event.preventDefault(); window.showVelloraToast('Downloading PDF invoice for #VEL-8401...');" style="color: var(--color-accent); font-weight: 600;">Download PDF</a></td>
+                </tr>
+                <tr>
+                  <td>Jul 03, 2026</td>
+                  <td>Celebration Suite</td>
+                  <td>Across the Spider-Verse</td>
+                  <td>3.0 Hours</td>
+                  <td><a href="#" onclick="event.preventDefault(); window.showVelloraToast('Downloading PDF invoice for #VEL-7193...');" style="color: var(--color-accent); font-weight: 600;">Download PDF</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ==================== TAB 7: PAYMENTS ==================== -->
+        <div class="dash-tab-pane" id="tab-payments">
+          <div class="dash-header-bar">
+            <div>
+              <h2>Payment Methods &amp; Invoices</h2>
+              <p>Manage your saved credit cards and review past billing</p>
+            </div>
+          </div>
+
+          <div class="cinema-card" style="padding: 24px; max-width: 600px; margin-bottom: 24px;">
+            <h4 style="margin-bottom: 12px;">Saved Payment Method</h4>
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: var(--color-surface-soft); border-radius: var(--radius-sm);">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <span>Visa ending in <strong>•••• 4819</strong></span>
+              </div>
+              <span class="eyebrow eyebrow-warm" style="margin-bottom: 0;">Default</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TAB 8: PROFILE SETTINGS ==================== -->
+        <div class="dash-tab-pane" id="tab-profile">
+          <div class="dash-header-bar">
+            <div>
+              <h2>Personal Profile &amp; Preferences</h2>
+              <p>Update your cinema presets, dietary tags, and notification settings</p>
+            </div>
+          </div>
+
+          <div class="cinema-card" style="padding: 32px; max-width: 700px;">
+            <form onsubmit="event.preventDefault(); window.showVelloraToast('Profile preferences updated successfully!');">
+              <div class="form-row-2col">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control" value="Elena">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control" value="Rostova">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" value="elena.guest@vellora.com">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Dietary Preferences</label>
+                <select class="form-control">
+                  <option selected>No restrictions</option>
+                  <option>Vegetarian / Vegan</option>
+                  <option>Gluten-Free</option>
+                  <option>Halal</option>
+                  <option>Kosher</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 8px;">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

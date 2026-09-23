@@ -1,0 +1,948 @@
+/* ==========================================================================
+   VELLORA — Comprehensive Production-Ready Responsive Stylesheet
+   Breakpoints: 
+   - 1440px+ (Large Desktop)
+   - 1200px - 1439px (Standard Desktop)
+   - 1024px - 1199px (Small Desktop / iPad Pro Landscape)
+   - 768px - 1023px (iPad & Tablets)
+   - 576px - 767px (Large Phones & Phablets)
+   - 320px - 575px (Standard & Compact Mobile)
+   ========================================================================== */
+
+/* --- Universal Fluid Baseline & Box Model Safety --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+img, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+input, select, textarea, button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. LARGE SCREENS (1440px+)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  :root {
+    --container-max-width: 1380px;
+  }
+}
+
+/* ==========================================================================
+   2. LAPTOP, TABLET & IPAD (max-width: 1199px)
+   ========================================================================== */
+@media (max-width: 1199px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  /* --- Site Header & Seamless Mobile Drawer (Clean iPad Pro & Standard iPad Views) --- */
+  .site-header {
+    height: 70px;
+    background: var(--nav-bg);
+  }
+
+  .site-header .nav-container {
+    height: 70px;
+  }
+
+  .home-hero-section,
+  .inner-page-hero,
+  .h2-hero-section {
+    margin-top: 70px !important;
+  }
+
+  .mobile-nav-drawer {
+    top: 70px;
+    height: calc(100vh - 70px);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.28s ease,
+                visibility 0.32s;
+  }
+
+  .mobile-nav-drawer.open {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mobile-nav-links {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  [dir="rtl"] .mobile-nav-links {
+    text-align: right;
+  }
+
+  .mobile-nav-links .nav-link,
+  .mobile-nav-links .dropdown-toggle {
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    padding: 10px 0 !important;
+    color: var(--color-text) !important;
+    text-align: left !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  [dir="rtl"] .mobile-nav-links .nav-link,
+  [dir="rtl"] .mobile-nav-links .dropdown-toggle {
+    text-align: right !important;
+  }
+
+  .mobile-nav-links .nav-link::after,
+  .mobile-nav-links .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .mobile-nav-links .nav-link.active,
+  .mobile-nav-links .dropdown-toggle.active {
+    color: var(--color-accent) !important;
+  }
+
+  .mobile-nav-links .nav-dropdown {
+    width: 100%;
+    text-align: left;
+  }
+
+  [dir="rtl"] .mobile-nav-links .nav-dropdown {
+    text-align: right;
+  }
+
+  .nav-links,
+  .desktop-login-btn {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 50%;
+    background: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- 2-Column Balanced Grid on iPad Pro & Tablets (768px - 1099px) --- */
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .home-hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .dash-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  .h1-calibration-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  /* Stack Dashboard Spotlight Card on Laptop/iPad Pro to prevent squeezed content */
+  .dash-spotlight-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dash-spotlight-content {
+    padding: 24px 20px;
+  }
+
+  .dash-spotlight-media {
+    height: 220px;
+    min-height: 220px;
+    border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
+  }
+}
+
+/* ==========================================================================
+   3. TABLETS & IPAD PORTRAIT (768px - 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* --- Hero 1 (Classic Luxe) --- */
+  .home-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-text-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group,
+  .hero-trust-indicators {
+    justify-content: center;
+  }
+
+  .hero-quick-booking-card {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* --- Hero 2 (Cinema Pods Console) --- */
+  .h2-console-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .h2-console-grid > div:last-child {
+    grid-column: span 2;
+  }
+
+  .h2-console-grid > div:last-child button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .h2-hero-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* --- Bento Grid Showcase --- */
+  .bento-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card-tall {
+    grid-row: auto;
+  }
+
+  /* --- Editorial & Calibration Grids --- */
+  .editorial-experience-grid,
+  .h1-calibration-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Auth Pages (Login / Register) --- */
+  .auth-top-bar {
+    padding: 16px 20px;
+  }
+
+  .auth-split-wrapper {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .auth-media-pane {
+    min-height: 240px;
+    padding: 76px 20px 24px 20px;
+    justify-content: center;
+  }
+
+  .auth-form-pane {
+    padding: 24px 16px;
+    align-items: flex-start;
+  }
+
+  /* --- Dashboard Mobile Horizontal Tab Bar (Reference Image 2 Match) --- */
+  .dash-horizontal-tabs-bar {
+    display: block !important;
+    position: sticky !important;
+    top: 70px !important;
+    margin-top: 70px !important;
+    z-index: 950 !important;
+  }
+
+  .dashboard-sidebar {
+    display: none !important;
+  }
+
+  .dash-sidebar-toggle-btn,
+  .dash-sidebar-close-btn,
+  .dash-sidebar-backdrop {
+    display: none !important;
+  }
+
+  .dashboard-layout,
+  [dir="rtl"] .dashboard-layout {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .dashboard-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 20px !important;
+  }
+
+  .dash-brand-sub {
+    display: none;
+  }
+
+  .dash-top-actions .btn-back-site {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .dash-top-actions .btn-back-site .back-text {
+    display: none !important;
+  }
+
+  .dash-top-actions .btn-logout {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .dash-top-actions .btn-logout .logout-text {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   4. SMALL TABLETS & LARGE PHONES (576px - 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  :root {
+    --inner-hero-height: 360px;
+  }
+
+  .section-spacing {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  /* --- Grid Collapsing --- */
+  .grid-3,
+  .grid-4,
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .h1-quadrant-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Dual Feature Media Image Grids: Stack vertically on tablet/mobile */
+  .dual-feature-media-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .dual-feature-media-grid > div {
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .dual-feature-media-grid > div:nth-child(2) {
+    margin-top: 0 !important;
+  }
+
+  /* All 2-Column Form Rows: Collapse to 1 column at <= 767px to avoid squashed inputs */
+  .hero-form-row,
+  .form-row-2col {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Responsive Form Cards & Padding */
+  .cinema-card {
+    padding: 20px 16px !important;
+  }
+
+  /* Pricing Addon Cards Stacking */
+  .pricing-addon-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+
+  .pricing-addon-card .pricing-addon-thumb,
+  .pricing-addon-card > div:first-child {
+    width: 100% !important;
+    height: 180px !important;
+    min-width: 0 !important;
+  }
+
+  .pricing-addon-card .card-body {
+    width: 100% !important;
+    padding: 6px 0 0 0 !important;
+  }
+
+  .experience-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .mosaic-item-large {
+    grid-row: auto;
+    height: 240px;
+  }
+
+  .mosaic-item {
+    height: 200px;
+  }
+
+  .dash-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .dashboard-main {
+    padding: 20px 16px !important;
+  }
+
+  .dash-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* --- Floating Back-to-Top Button Mobile Spacing --- */
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+
+  [dir="rtl"] .back-to-top {
+    right: auto;
+    left: 20px;
+  }
+
+  /* --- Hide Back-to-Site on Mobile Dashboard --- */
+  .dash-top-actions .btn-back-site {
+    display: none !important;
+  }
+
+  /* --- Cinema Cards on Mobile & Tablet (Dynamic Flow Specs) --- */
+  .card-media {
+    height: 200px;
+  }
+
+  .card-spec-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.72rem !important;
+    padding: 6px 10px !important;
+    gap: 6px 10px;
+    white-space: normal;
+    overflow: visible;
+    min-height: 34px;
+    height: auto;
+  }
+
+  .card-spec-box span,
+  .card-spec-box strong {
+    font-size: 0.72rem !important;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  /* --- Movie Vault & Snack Grids --- */
+  .movie-vault-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  /* --- Tables Internal Scrolling Container --- */
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .table-header-bar {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .comparison-table {
+    min-width: 680px;
+  }
+
+  .card-footer .spec-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 6px 12px;
+  }
+
+  .card-footer .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   5. STANDARD & COMPACT MOBILE (320px - 575px)
+   ========================================================================== */
+@media (max-width: 575px) {
+  /* --- Containers & Layout --- */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-header {
+    height: 70px;
+  }
+
+  .site-header .nav-container {
+    height: 70px;
+    gap: 10px;
+  }
+
+  .brand-name-text {
+    font-size: 1.35rem;
+  }
+
+  .brand-wrapper .brand-logo-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-controls {
+    gap: 8px;
+  }
+
+  .control-toggle-btn {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    border-radius: 50% !important;
+    font-size: 0.78rem;
+  }
+
+  .hamburger-btn {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    border-radius: 50% !important;
+  }
+
+  /* --- Typography Fluid Scaling --- */
+  h1 {
+    font-size: clamp(1.85rem, 5.5vw, 2.2rem);
+    line-height: 1.18;
+  }
+
+  h2 {
+    font-size: clamp(1.45rem, 4.8vw, 1.8rem);
+    line-height: 1.22;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+  }
+
+  /* --- Buttons & CTAs --- */
+  .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-cta-group,
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .home-hero-section,
+  .inner-page-hero,
+  .h2-hero-section {
+    margin-top: 70px !important;
+    padding-top: 36px !important;
+  }
+
+  .hero-trust-indicators {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 10px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .trust-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 14px !important;
+    flex: none !important;
+  }
+
+  [dir="rtl"] .trust-item {
+    text-align: right !important;
+  }
+
+  /* --- Tech Spec Bars: Fluid Wrap / Stack on Mobile --- */
+  .tech-spec-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 14px;
+  }
+
+  .hero-quick-booking-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  /* --- Hero 2 Console Form Stacking --- */
+  .h2-console-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .h2-console-grid > div:last-child {
+    grid-column: span 1;
+  }
+
+  .h2-console-grid > div:last-child button {
+    width: 100%;
+  }
+
+  .h2-hero-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .h2-metric-capsule {
+    padding: 14px 16px;
+  }
+
+  /* --- Home 1 Calibration Console Card & Meter Bars --- */
+  .h1-console-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .h1-console-media {
+    height: 180px;
+    margin-bottom: 16px;
+  }
+
+  .h1-meter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 12px;
+  }
+
+  .h1-meter-bar strong {
+    font-size: 0.88rem;
+  }
+
+  /* --- Rooms Filter Pills: 1-by-1 Uniform Full Width Stacking on Mobile --- */
+  .category-pill-filter {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto 28px auto !important;
+    gap: 10px !important;
+  }
+
+  .pill-btn {
+    width: 100% !important;
+    padding: 10px 18px !important;
+    font-size: 0.88rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* --- Card Footers & Prices on Mobile --- */
+  .card-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+    padding-top: 12px !important;
+    width: 100% !important;
+  }
+
+  .card-footer .spec-item {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 6px 12px !important;
+  }
+
+  .card-footer .btn,
+  .card-footer .btn-outline,
+  .card-footer .btn-sm {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .price-tag {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+  }
+
+  .btn-card-action,
+  .btn-card-action-alt {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* --- Card Spec Box on Mobile --- */
+  .card-spec-box {
+    font-size: 0.7rem !important;
+    padding: 6px 8px !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    min-height: 32px !important;
+    height: auto !important;
+  }
+
+  .card-spec-box span,
+  .card-spec-box strong {
+    font-size: 0.7rem !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  /* --- Movie Vault Single / Double Column Grid --- */
+  .movie-vault-grid {
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 12px;
+  }
+
+  .movie-poster-card .poster-media {
+    height: 190px;
+  }
+
+  /* --- Pricing & Auth Cards --- */
+  .pricing-card {
+    padding: 24px 16px;
+  }
+
+  .auth-top-bar {
+    padding: 12px 14px;
+  }
+
+  .auth-media-pane {
+    min-height: 200px;
+    padding: 68px 16px 16px 16px;
+  }
+
+  .auth-media-quote h3 {
+    font-size: 1.28rem;
+    margin-bottom: 6px;
+  }
+
+  .auth-media-quote p {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .auth-form-pane {
+    padding: 12px 12px 28px 12px !important;
+  }
+
+  .auth-card {
+    padding: 20px 14px !important;
+    border-radius: var(--radius-md) !important;
+    margin: 0 !important;
+  }
+
+  .modal-content {
+    padding: 24px 16px;
+    margin: 16px;
+    max-width: 100%;
+  }
+
+  /* --- Dashboard Mobile Header --- */
+  .dash-top-header {
+    height: 68px;
+  }
+
+  .dash-top-header .dash-nav-container {
+    padding: 0 14px;
+    height: 68px;
+    gap: 8px;
+  }
+
+  .dash-brand-title {
+    font-size: 1.15rem;
+  }
+
+  .dash-top-actions {
+    gap: 6px;
+  }
+
+  .dash-horizontal-tabs-bar {
+    top: 68px !important;
+    margin-top: 68px !important;
+    padding: 8px 12px;
+  }
+
+  .dash-tab-pill {
+    padding: 6px 13px;
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+
+  /* --- Vellora Notification Toast Mobile --- */
+  #vellora-toast {
+    bottom: 24px !important;
+    left: 50% !important;
+    max-width: calc(100vw - 32px) !important;
+    width: max-content !important;
+    padding: 10px 18px !important;
+    font-size: 0.84rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+  }
+}
+
+/* ==========================================================================
+   6. EXTRA COMPACT MOBILE (320px - 360px)
+   ========================================================================== */
+@media (max-width: 360px) {
+  .brand-name-text {
+    font-size: 1.15rem;
+  }
+
+  .brand-wrapper .brand-logo-svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card-media {
+    height: 170px;
+  }
+
+  .card-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .btn-card-action {
+    width: 100% !important;
+  }
+
+  .movie-vault-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELLORA (Home 2) — Private Luxury Movie Theater & Acoustic Pods</title>
+  <meta name="description" content="Experience bespoke private cinema architecture with curved laser projection, soundproof acoustic pods, chef-crafted in-seat dining, and exclusive membership passes.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <!-- ==================== CINEMATIC PAGE PRELOADER ==================== -->
+  <div id="vellora-preloader" class="vellora-preloader" aria-hidden="true">
+    <div class="preloader-backdrop"></div>
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <svg class="preloader-film-reel" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="44" stroke="rgba(242, 201, 138, 0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+          <circle cx="50" cy="50" r="38" stroke="url(#preloadRingGrad)" stroke-width="3" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="preloadRingGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A"/>
+              <stop offset="50%" stop-color="#6B2D5C"/>
+              <stop offset="100%" stop-color="#F2C98A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg class="preloader-brand-icon" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#preloadLogoGrad)" stroke-width="2.5" />
+          <circle cx="8" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+          <circle cx="40" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+          <polygon points="16,16 34,24 16,32" fill="url(#preloadBeamGrad)" />
+          <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+          <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+          <defs>
+            <linearGradient id="preloadLogoGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6B2D5C" />
+              <stop offset="50%" stop-color="#5B315F" />
+              <stop offset="100%" stop-color="#F2C98A" />
+            </linearGradient>
+            <linearGradient id="preloadBeamGrad" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.15" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="preloader-brand-title">VELLORA</div>
+      <div class="preloader-status-text">
+        <span class="preloader-status-dot"></span>
+        CALIBRATING PRIVATE CINEMA
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SITE NAVBAR WITH DROPDOWN ==================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-wrapper" aria-label="VELLORA Home">
+        <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none">
+          <defs>
+            <linearGradient id="navLogoGradH2" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6B2D5C" />
+              <stop offset="50%" stop-color="#5B315F" />
+              <stop offset="100%" stop-color="#F2C98A" />
+            </linearGradient>
+            <linearGradient id="navBeamGradH2" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.1" />
+            </linearGradient>
+          </defs>
+          <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#navLogoGradH2)" stroke-width="2.5" />
+          <circle cx="8" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+          <circle cx="40" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+          <polygon points="16,16 34,24 16,32" fill="url(#navBeamGradH2)" />
+          <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+          <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+        </svg>
+        <span class="brand-name-text">VELLORA</span>
+      </a>
+
+      <!-- Desktop Navigation with Home Dropdown -->
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <button class="nav-link active dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Home
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Home 1 (Classic Luxe)</a></li>
+            <li><a href="home-2.html" class="active">Home 2 (Cinema Pods)</a></li>
+          </ul>
+        </li>
+        <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+        <li><a href="movies-snacks.html" class="nav-link">Movies &amp; Snacks</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="parties.html" class="nav-link">Private Events</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <!-- Controls -->
+      <div class="nav-controls">
+        <button class="control-toggle-btn theme-toggle-btn" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="control-toggle-btn rtl-toggle-btn" aria-label="Toggle Direction">RTL</button>
+        <a href="login.html" class="btn btn-primary btn-sm desktop-login-btn">Login</a>
+        <button class="hamburger-btn" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-links">
+      <li class="nav-dropdown">
+        <button class="nav-link active dropdown-toggle">
+          Home Concepts
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 (Classic Luxe)</a></li>
+          <li><a href="home-2.html" class="active">Home 2 (Cinema Pods)</a></li>
+        </ul>
+      </li>
+      <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+      <li><a href="movies-snacks.html" class="nav-link">Movies &amp; Snacks</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="parties.html" class="nav-link">Private Events</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="register.html" class="btn btn-secondary">Create Account</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =======================================================
+         HERO SECTION: PANORAMIC CINEMA SHOWCASE & INTERACTIVE LUXURY CONSOLE
+         ======================================================= -->
+    <section class="h2-panoramic-hero">
+      <img src="assets/images/hero-home-2-cinema.jpg" alt="Vellora Modern Private Cinema Architecture" class="home-hero-bg">
+      <div class="home-hero-overlay" style="background: radial-gradient(circle at 50% 40%, rgba(91, 49, 95, 0.4) 0%, rgba(11, 13, 22, 0.95) 75%, #0B0D16 100%);"></div>
+      
+      <div class="container" style="position: relative; z-index: 2;">
+        <!-- Top Centered Header -->
+        <div class="h2-hero-header-block">
+          <span class="eyebrow eyebrow-warm" style="background: rgba(242, 201, 138, 0.15); border: 1px solid rgba(242, 201, 138, 0.3); padding: 8px 18px; border-radius: var(--radius-full); display: inline-flex; align-items: center; gap: 8px;">
+            ✦ NEXT-GEN IMMERSIVE CINEMA PODS
+          </span>
+          <h1>Private Cinema. Reimagined at Scale.</h1>
+          <p>Bespoke isolated screening sanctuaries calibrated with 140″ curved 4K laser optics, STC-70 acoustic isolation, motorized daybeds, and private sommelier service.</p>
+        </div>
+
+        <!-- Interactive Horizontal Luxury Booking Console -->
+        <div class="h2-booking-console-card">
+          <form onsubmit="event.preventDefault(); window.showVelloraToast('Sanctuary locked in! Opening customer portal...'); setTimeout(()=>location.href='dashboard.html', 800);" class="h2-console-grid">
+            <div class="h2-console-field">
+              <label>1. Sanctuary Suite</label>
+              <select>
+                <option selected>Velvet Starlight Pod (2 Guests)</option>
+                <option>Esports &amp; 120Hz Rig (6–8 Guests)</option>
+                <option>Master Acoustic Chamber (10 Guests)</option>
+                <option>The Grand Cinema Hall (16 VIPs)</option>
+              </select>
+            </div>
+            
+            <div class="h2-console-field">
+              <label>2. Screening Date</label>
+              <input type="date" value="2026-09-28" required>
+            </div>
+
+            <div class="h2-console-field">
+              <label>3. Showtime Slot</label>
+              <select>
+                <option>2:00 PM – Matinee</option>
+                <option selected>5:30 PM – Twilight</option>
+                <option>8:45 PM – Prime Night</option>
+                <option>11:30 PM – Velvet Midnight</option>
+              </select>
+            </div>
+
+            <div class="h2-console-field">
+              <label>4. Party Size</label>
+              <select>
+                <option selected>Couple (2 Guests)</option>
+                <option>Intimate (3–4 Guests)</option>
+                <option>Party (5–8 Guests)</option>
+                <option>Full VIP (9–16 Guests)</option>
+              </select>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary" style="height: 44px; padding: 0 24px; white-space: nowrap; display: flex; align-items: center; gap: 8px; font-weight: 700;">
+                Book Sanctuary
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- 3 Feature Metric Badges Below Console -->
+        <div class="h2-hero-metrics-row">
+          <div class="h2-metric-capsule">
+            <div class="h2-metric-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><polygon points="10 8 16 11 10 14"/></svg>
+            </div>
+            <div class="h2-metric-info">
+              <h4>140″ 4K Curved Laser</h4>
+              <p>Pure RGB laser &bull; DCI-P3 100% color gamut</p>
+            </div>
+          </div>
+
+          <div class="h2-metric-capsule">
+            <div class="h2-metric-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <div class="h2-metric-info">
+              <h4>STC-70 Acoustic Cocoon</h4>
+              <p>Total studio soundproofing &bull; 0dB sound bleed</p>
+            </div>
+          </div>
+
+          <div class="h2-metric-capsule">
+            <div class="h2-metric-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div class="h2-metric-info">
+              <h4>Silent Butler Service</h4>
+              <p>In-suite dining &amp; warm truffle concessions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 1: BENTO GRID SCREENING POD SHOWCASE
+         ======================================================= -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Architectural Bento</span>
+          <h2>Isolated Screening Pods</h2>
+          <p class="section-desc">Each pod is precision-crafted with high-density acoustic diffusers, starlight ceilings, and motorized seating.</p>
+        </div>
+
+        <div class="bento-grid-container">
+          <!-- Bento Card 1 (Tall / Large Feature - Full Rich Content) -->
+          <div class="bento-card bento-card-tall">
+            <div class="bento-media-cover" style="height: 320px;">
+              <img src="assets/images/h2-bento-pod-1.jpg" alt="Velvet Starlight Pod Private Cinema">
+              <span class="card-badge">Signature Couples Suite</span>
+            </div>
+            <span class="eyebrow" style="margin-bottom: 6px;">Couples &amp; Intimacy</span>
+            <h3 style="margin-bottom: 8px;">The Velvet Starlight Pod</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 16px;">Designed exclusively for couples seeking complete cinema privacy. Features a circular motorized reclining daybed, 3,000-point fiber optic constellation ceiling, and private sommelier service.</p>
+            
+            <!-- Bento Feature Badges Grid (Fills Space Beautifully) -->
+            <div class="bento-spec-grid">
+              <div class="bento-spec-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Capacity: 2 Guests</span>
+              </div>
+              <div class="bento-spec-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+                <span>140″ 4K Curved Laser</span>
+              </div>
+              <div class="bento-spec-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Heated Velvet Daybed</span>
+              </div>
+              <div class="bento-spec-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <span>Spatial Dolby Atmos</span>
+              </div>
+            </div>
+
+            <!-- Complimentary Perk Box -->
+            <div class="bento-perk-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-warm); flex-shrink: 0;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span><strong>Complimentary Perk:</strong> Artisan Truffle Popcorn &amp; Two Sparkling Wine Flutes included.</span>
+            </div>
+
+            <div class="card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+              <span class="amount" style="font-weight: 800; color: var(--color-accent); font-size: 1.35rem;">$135 <span style="font-size: 0.85rem; color: var(--color-muted); font-weight: normal;">/ 2.5 hrs</span></span>
+              <a href="rooms.html" class="btn btn-primary btn-sm">Explore Full Pod</a>
+            </div>
+          </div>
+
+          <!-- Bento Card 2 -->
+          <div class="bento-card">
+            <div class="bento-media-cover" style="height: 200px;">
+              <img src="assets/images/h2-bento-pod-2.jpg" alt="Esports and Low Latency Rig">
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Esports &amp; Gaming Pod</h3>
+            <p style="font-size: 0.85rem; margin-bottom: 12px;">Ultra-low 1ms input latency, dual PS5 &amp; PC docks, and 120Hz 4K laser projection.</p>
+            <div class="card-footer" style="padding-top: 10px; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-weight: 700; color: var(--color-accent); font-size: 1.15rem;">$240</span>
+              <a href="rooms.html" class="btn btn-outline btn-sm">Details</a>
+            </div>
+          </div>
+
+          <!-- Bento Card 3 -->
+          <div class="bento-card">
+            <div class="bento-media-cover" style="height: 200px;">
+              <img src="assets/images/h2-bento-pod-3.jpg" alt="Acoustic Master Chamber">
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Master Acoustic Chamber</h3>
+            <p style="font-size: 0.85rem; margin-bottom: 12px;">STC-70 laboratory-grade sound isolation with 11.4.6 Dolby Atmos studio channels.</p>
+            <div class="card-footer" style="padding-top: 10px; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-weight: 700; color: var(--color-accent); font-size: 1.15rem;">$320</span>
+              <a href="rooms.html" class="btn btn-outline btn-sm">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 2: ENGINEERING & OPTICAL CRYSTAL MATRIX
+         ======================================================= -->
+    <section class="section-spacing" style="background: var(--color-surface-soft);">
+      <div class="container">
+        <div class="editorial-experience-grid">
+          <div>
+            <span class="eyebrow eyebrow-warm">Studio Calibration</span>
+            <h2>Reference Grade AV Engineering</h2>
+            <p class="section-desc">Experience movie screenings mastered to the exact standards of Hollywood mixing stages.</p>
+
+            <div style="margin-top: 24px;">
+              <div class="tech-spec-bar">
+                <span>DCI-P3 Color Spectrum Laser</span>
+                <strong>100% Rec.2020 Coverage</strong>
+              </div>
+              <div class="tech-spec-bar">
+                <span>Spatial Acoustic Subwoofers</span>
+                <strong>Dual 18" Sealed Drivers</strong>
+              </div>
+              <div class="tech-spec-bar">
+                <span>Tactile Seat Transducers</span>
+                <strong>Bass You Feel, Not Hear</strong>
+              </div>
+              <div class="tech-spec-bar">
+                <span>Acoustic Isolation Wall Depth</span>
+                <strong>14-Inch Floating Wall System</strong>
+              </div>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="pricing.html" class="btn btn-primary">Compare Tech Tiers</a>
+            </div>
+          </div>
+
+          <div class="dual-feature-media-grid">
+            <div>
+              <img src="assets/images/h2-tech-lens.jpg" alt="AV Engineering Broadcast and Audio Master Control Room">
+            </div>
+            <div>
+              <img src="assets/images/h2-tech-atmos-sound.jpg" alt="Grand Red Private Screening Auditorium Theater">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 3: CHEF'S IN-SEAT THEATER DINING EXPERIENCE
+         ======================================================= -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="editorial-experience-grid">
+          <div class="dual-feature-media-grid">
+            <div>
+              <img src="assets/images/h2-dining-experience.jpg" alt="Executive Chef Plating Gourmet Cinema Salmon Dish">
+            </div>
+            <div>
+              <img src="assets/images/h2-chef-plating.jpg" alt="Chef Preparing Live Gastronomy and Teppanyaki Dining">
+            </div>
+          </div>
+
+          <div>
+            <span class="eyebrow">Gastronomy &bull; Chef's Table</span>
+            <h2>In-Seat Culinary Indulgence</h2>
+            <p class="section-desc">No plastic cups or stale snacks. Our culinary team prepares dishes designed for effortless dining in ambient theater lighting.</p>
+
+            <div class="feature-list">
+              <div class="feature-list-item">
+                <div class="feature-icon-badge">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+                </div>
+                <div>
+                  <h4>Silent Double-Door Delivery Hatch</h4>
+                  <p>Concierge serves your hot appetizers and beverages through a sound-baffled staging hatch without opening suite doors.</p>
+                </div>
+              </div>
+
+              <div class="feature-list-item">
+                <div class="feature-icon-badge">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                </div>
+                <div>
+                  <h4>Artisanal Truffle &amp; Caviar Accents</h4>
+                  <p>Hand-crafted popcorn pairings, organic wagyu sliders, and sparkling non-alcoholic botanical flights.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <a href="movies-snacks.html" class="btn btn-outline">Explore Culinary Menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 4: VIP SCREENING PASS MEMBERSHIPS & PERKS
+         ======================================================= -->
+    <section class="section-spacing" style="background: var(--color-surface-soft);">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow eyebrow-warm">Exclusive Passes</span>
+          <h2>VIP Screening Memberships</h2>
+          <p class="section-desc">Unlock recurring monthly theater hours, priority holiday reservations, and complimentary gourmet concession credit.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Pass Tier 1 -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-tier-name">Cinephile Silver</h3>
+              <div class="pricing-price">$190 <span style="font-size: 1rem; color: var(--color-muted); font-weight: normal;">/ mo</span></div>
+              <p style="font-size: 0.85rem; color: var(--color-muted);">4 Hours Included Monthly</p>
+            </div>
+            <ul class="pricing-features">
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 4 Hours of Couple / Lounge Pods</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 15% Off all concession orders</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 7-Day advance booking window</li>
+            </ul>
+            <button class="btn btn-outline" onclick="window.showVelloraToast('Cinephile Silver pass selected!')">Join Silver Tier</button>
+          </div>
+
+          <!-- Pass Tier 2 (Featured) -->
+          <div class="pricing-card featured">
+            <span class="featured-ribbon">Most Coveted</span>
+            <div class="pricing-header">
+              <h3 class="pricing-tier-name">The Velvet Circle</h3>
+              <div class="pricing-price">$380 <span style="font-size: 1rem; color: var(--color-muted); font-weight: normal;">/ mo</span></div>
+              <p style="font-size: 0.85rem; color: var(--color-muted);">10 Hours Included Monthly</p>
+            </div>
+            <ul class="pricing-features">
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 10 Hours across ANY suite or pod</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Complimentary Truffle Popcorn each visit</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated private beverage locker</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 30-Day priority booking priority</li>
+            </ul>
+            <button class="btn btn-primary" onclick="window.showVelloraToast('Velvet Circle pass selected!')">Join Velvet Circle</button>
+          </div>
+
+          <!-- Pass Tier 3 -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-tier-name">Corporate Premier</h3>
+              <div class="pricing-price">$750 <span style="font-size: 1rem; color: var(--color-muted); font-weight: normal;">/ mo</span></div>
+              <p style="font-size: 0.85rem; color: var(--color-muted);">20 Hours &bull; Full Auditorium</p>
+            </div>
+            <ul class="pricing-features">
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 20 Hours with Auditorium Access</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Full presentation AV &amp; mic gear</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Event Butler on site</li>
+            </ul>
+            <button class="btn btn-outline" onclick="window.showVelloraToast('Corporate Premier pass selected!')">Inquire Membership</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 5: GUEST SCREENING STORIES & VISUAL TESTIMONIALS
+         ======================================================= -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Guest Impressions</span>
+          <h2>Screening Stories from Vellora Guests</h2>
+          <p class="section-desc">Read how our guests experience date nights, birthdays, and private movie marathons.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Story 1 -->
+          <div class="testimonial-card-h2">
+            <div>
+              <div style="color: #F2C98A; margin-bottom: 12px; font-size: 1.1rem;">★★★★★</div>
+              <p style="font-style: italic; color: var(--color-text); font-size: 0.95rem; line-height: 1.6;">
+                "The Velvet Starlight Pod was hands down the best anniversary date we have ever had. The heated daybed, silence, and warm truffle popcorn made it magical."
+              </p>
+            </div>
+            <div class="guest-avatar-wrap">
+              <img src="assets/images/h2-guest-review-1.jpg" alt="Guest Elena and Marcus" class="guest-avatar-img">
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 2px;">Elena &amp; Marcus S.</h4>
+                <span style="font-size: 0.8rem; color: var(--color-muted);">Velvet Starlight Duo Suite</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 2 -->
+          <div class="testimonial-card-h2">
+            <div>
+              <div style="color: #F2C98A; margin-bottom: 12px; font-size: 1.1rem;">★★★★★</div>
+              <p style="font-style: italic; color: var(--color-text); font-size: 0.95rem; line-height: 1.6;">
+                "Hosted my 30th birthday in the Celebration Suite. The custom video intro on screen and the wagyu slider platters had all 12 of my friends stunned!"
+              </p>
+            </div>
+            <div class="guest-avatar-wrap">
+              <img src="assets/images/h2-guest-review-2.jpg" alt="Guest Jordan Chen" class="guest-avatar-img">
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 2px;">Jordan Chen &amp; Friends</h4>
+                <span style="font-size: 0.8rem; color: var(--color-muted);">Celebration Suite (14 Guests)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 3 -->
+          <div class="testimonial-card-h2">
+            <div>
+              <div style="color: #F2C98A; margin-bottom: 12px; font-size: 1.1rem;">★★★★★</div>
+              <p style="font-style: italic; color: var(--color-text); font-size: 0.95rem; line-height: 1.6;">
+                "Taking our kids to public cinemas was always stressful with noise. Vellora's Family Lounge gave us total privacy and freedom to pause whenever we needed."
+              </p>
+            </div>
+            <div class="guest-avatar-wrap">
+              <img src="assets/images/h2-guest-review-3.jpg" alt="Guest The Rodriguez Family" class="guest-avatar-img">
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 2px;">The Rodriguez Family</h4>
+                <span style="font-size: 0.8rem; color: var(--color-muted);">Artisan Family Lounge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         FINAL CTA BANNER
+         ======================================================= -->
+    <section class="fullwidth-cta-section">
+      <img src="assets/images/h2-cta-banner.jpg" alt="Vellora Private Screening Suite Ambiance" class="cta-bg">
+      <div class="cta-overlay"></div>
+      
+      <div class="container">
+        <div class="cta-content">
+          <span class="eyebrow eyebrow-warm">✦ Reserve Your Showtime</span>
+          <h2>Experience Cinema in Velvet Silence</h2>
+          <p>Choose your private pod, select your 4K movie, and enjoy silent in-seat dining. Instant confirmation in seconds.</p>
+          <div class="cta-buttons">
+            <a href="dashboard.html" class="btn btn-primary btn-lg">Book Instant Screening</a>
+            <a href="pricing.html" class="btn btn-secondary btn-lg">Explore Memberships</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-wrapper" style="color: #FFFFFF;">
+            <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#navLogoGradH2)" stroke-width="2.5" />
+              <polygon points="16,16 34,24 16,32" fill="url(#navBeamGradH2)" />
+              <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+              <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+            </svg>
+            <span class="brand-name-text">VELLORA</span>
+          </a>
+          <p>"Your Movie. Your Room. Your Night." The premier private screening suite and boutique cinema lounge.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Private Suites</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Velvet Starlight Pod</a></li>
+            <li><a href="rooms.html">Esports &amp; Gaming Pod</a></li>
+            <li><a href="rooms.html">Master Acoustic Chamber</a></li>
+            <li><a href="rooms.html">Celebration Suite</a></li>
+            <li><a href="rooms.html">Grand Auditorium</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Experiences</h4>
+          <ul class="footer-links">
+            <li><a href="movies-snacks.html">Movie Vault</a></li>
+            <li><a href="movies-snacks.html">Concession Menu</a></li>
+            <li><a href="pricing.html">Screening Packages</a></li>
+            <li><a href="parties.html">Private Events</a></li>
+            <li><a href="dashboard.html">Client Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Concierge &amp; Hours</h4>
+          <p style="color: rgba(247, 244, 240, 0.7); font-size: 0.9rem; margin-bottom: 12px;">7 Days a Week: 11:00 AM – 2:00 AM</p>
+          <p style="color: rgba(247, 244, 240, 0.7); font-size: 0.9rem; margin-bottom: 16px;">1042 Cinema Boulevard, Suite 500</p>
+          <a href="dashboard.html" class="btn btn-outline btn-sm" style="color: #FFFFFF; border-color: rgba(255,255,255,0.2);">Client Portal</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 VELLORA Private Theaters. All rights reserved.</span>
+        <span>Cinema Noir Aesthetic &bull; Pure Soundproof Isolation</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

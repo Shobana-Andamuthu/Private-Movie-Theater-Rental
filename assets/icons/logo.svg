@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="brand-logo-svg">
+  <defs>
+    <linearGradient id="velloraGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E45B55" />
+      <stop offset="50%" stop-color="#5B315F" />
+      <stop offset="100%" stop-color="#F2C98A" />
+    </linearGradient>
+    <linearGradient id="beamGrad" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#E45B55" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+  <!-- Outer Cinema Frame -->
+  <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#velloraGrad)" stroke-width="2.5" />
+  
+  <!-- Film Sprockets / Framing Accents -->
+  <circle cx="8" cy="14" r="1.5" fill="#E45B55" />
+  <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+  <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+  
+  <circle cx="40" cy="14" r="1.5" fill="#E45B55" />
+  <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+  <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+
+  <!-- Stylized Geometric Projector Lens & Dynamic Cinema Beam -->
+  <polygon points="16,16 34,24 16,32" fill="url(#beamGrad)" />
+  <circle cx="16" cy="24" r="4.5" fill="#E45B55" />
+  <circle cx="16" cy="24" r="2" fill="#F7F4F0" />
+  <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+</svg>

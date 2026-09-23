@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — VELLORA Private Theaters</title>
+  <meta name="description" content="Log in to manage your private cinema reservations, order gourmet concessions, and select movies.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <!-- ==================== CINEMATIC PAGE PRELOADER ==================== -->
+  <div id="vellora-preloader" class="vellora-preloader" aria-hidden="true">
+    <div class="preloader-backdrop"></div>
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <svg class="preloader-film-reel" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="44" stroke="rgba(242, 201, 138, 0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+          <circle cx="50" cy="50" r="38" stroke="url(#preloadRingGrad)" stroke-width="3" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="preloadRingGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A"/>
+              <stop offset="50%" stop-color="#6B2D5C"/>
+              <stop offset="100%" stop-color="#F2C98A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg class="preloader-brand-icon" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#preloadLogoGrad)" stroke-width="2.5" />
+          <circle cx="8" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+          <circle cx="40" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+          <polygon points="16,16 34,24 16,32" fill="url(#preloadBeamGrad)" />
+          <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+          <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+          <defs>
+            <linearGradient id="preloadLogoGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6B2D5C" />
+              <stop offset="50%" stop-color="#5B315F" />
+              <stop offset="100%" stop-color="#F2C98A" />
+            </linearGradient>
+            <linearGradient id="preloadBeamGrad" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.15" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="preloader-brand-title">VELLORA</div>
+      <div class="preloader-status-text">
+        <span class="preloader-status-dot"></span>
+        CALIBRATING PRIVATE CINEMA
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Navigation Controls: Logo on left, Theme & RTL on right -->
+  <header class="auth-top-bar">
+    <a href="index.html" class="brand-wrapper" aria-label="VELLORA Home">
+      <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none">
+        <defs>
+          <linearGradient id="authNavLogoGradL" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#F2C98A" />
+            <stop offset="50%" stop-color="#FFFFFF" />
+            <stop offset="100%" stop-color="#F2C98A" />
+          </linearGradient>
+          <linearGradient id="authNavBeamGradL" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.2" />
+          </linearGradient>
+        </defs>
+        <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#authNavLogoGradL)" stroke-width="2.5" />
+        <circle cx="8" cy="14" r="1.5" fill="#F2C98A" />
+        <circle cx="8" cy="24" r="1.5" fill="#FFFFFF" />
+        <circle cx="8" cy="34" r="1.5" fill="#F2C98A" />
+        <circle cx="40" cy="14" r="1.5" fill="#F2C98A" />
+        <circle cx="40" cy="24" r="1.5" fill="#FFFFFF" />
+        <circle cx="40" cy="34" r="1.5" fill="#F2C98A" />
+        <polygon points="16,16 34,24 16,32" fill="url(#authNavBeamGradL)" />
+        <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+        <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+      </svg>
+      <span class="brand-name-text">VELLORA</span>
+    </a>
+    <div class="nav-controls">
+      <button class="control-toggle-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="control-toggle-btn rtl-toggle-btn" aria-label="Toggle Direction" title="Toggle RTL/LTR">RTL</button>
+    </div>
+  </header>
+
+  <div class="auth-split-wrapper">
+    <!-- Left Pane: Immersive Cinema Visual -->
+    <div class="auth-media-pane">
+      <img src="assets/images/auth-login-bg.jpg" alt="Vellora Intimate Cinema Suite" class="auth-media-bg">
+      <div class="auth-media-overlay"></div>
+
+      <div class="auth-media-quote">
+        <span class="eyebrow eyebrow-warm" style="margin-bottom: 12px; display: inline-flex;">Private Member Portal</span>
+        <h3>&ldquo;Your Movie. Your Room. Your Night.&rdquo;</h3>
+        <p style="color: rgba(247, 244, 240, 0.9); font-size: 0.95rem; line-height: 1.6;">Access your personalized screening calendar, track upcoming showtimes, and pre-order artisanal concessions.</p>
+      </div>
+    </div>
+
+    <!-- Right Pane: Login Form -->
+    <div class="auth-form-pane">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h2>Welcome Back</h2>
+          <p>Enter your credentials to access your screening reservations</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); window.showVelloraToast('Login successful! Welcome to VELLORA.'); setTimeout(()=>location.href='dashboard.html', 800);">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" required placeholder="name@domain.com" value="elena.guest@vellora.com">
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" style="margin-bottom: 0;">Password</label>
+              <a href="#" onclick="event.preventDefault(); window.showVelloraToast('Password reset link sent to your email!');" style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Forgot Password?</a>
+            </div>
+            <div class="password-input-wrap">
+              <input type="password" class="form-control" required placeholder="••••••••" value="CinemaNoir2026!">
+              <button type="button" class="toggle-password-btn" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--color-muted); cursor: pointer;">
+              <input type="checkbox" checked style="accent-color: var(--color-accent);"> Remember my session
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Sign In to Dashboard</button>
+
+          <p style="text-align: center; font-size: 0.9rem;">
+            New to Vellora? <a href="register.html" style="color: var(--color-accent); font-weight: 700;">Create an Account</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Library &amp; Gourmet Snacks — VELLORA Private Theaters</title>
+  <meta name="description" content="Browse our 4,000+ film library and artisanal cinema concessions. From truffle popcorn and wagyu sliders to craft mocktails, served directly to your seat.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <!-- ==================== CINEMATIC PAGE PRELOADER ==================== -->
+  <div id="vellora-preloader" class="vellora-preloader" aria-hidden="true">
+    <div class="preloader-backdrop"></div>
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <svg class="preloader-film-reel" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="44" stroke="rgba(242, 201, 138, 0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+          <circle cx="50" cy="50" r="38" stroke="url(#preloadRingGrad)" stroke-width="3" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="preloadRingGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A"/>
+              <stop offset="50%" stop-color="#6B2D5C"/>
+              <stop offset="100%" stop-color="#F2C98A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg class="preloader-brand-icon" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#preloadLogoGrad)" stroke-width="2.5" />
+          <circle cx="8" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+          <circle cx="40" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+          <polygon points="16,16 34,24 16,32" fill="url(#preloadBeamGrad)" />
+          <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+          <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+          <defs>
+            <linearGradient id="preloadLogoGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6B2D5C" />
+              <stop offset="50%" stop-color="#5B315F" />
+              <stop offset="100%" stop-color="#F2C98A" />
+            </linearGradient>
+            <linearGradient id="preloadBeamGrad" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.15" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="preloader-brand-title">VELLORA</div>
+      <div class="preloader-status-text">
+        <span class="preloader-status-dot"></span>
+        CALIBRATING PRIVATE CINEMA
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SITE NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-wrapper" aria-label="VELLORA Home">
+        <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none">
+          <defs>
+            <linearGradient id="navLogoGradM" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6B2D5C" />
+              <stop offset="50%" stop-color="#5B315F" />
+              <stop offset="100%" stop-color="#F2C98A" />
+            </linearGradient>
+            <linearGradient id="navBeamGradM" x1="14" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F2C98A" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#6B2D5C" stop-opacity="0.1" />
+            </linearGradient>
+          </defs>
+          <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#navLogoGradM)" stroke-width="2.5" />
+          <circle cx="8" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="8" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="8" cy="34" r="1.5" fill="#5B315F" />
+          <circle cx="40" cy="14" r="1.5" fill="#6B2D5C" />
+          <circle cx="40" cy="24" r="1.5" fill="#F2C98A" />
+          <circle cx="40" cy="34" r="1.5" fill="#5B315F" />
+          <polygon points="16,16 34,24 16,32" fill="url(#navBeamGradM)" />
+          <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+          <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+        </svg>
+        <span class="brand-name-text">VELLORA</span>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Home
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Home 1 (Classic Luxe)</a></li>
+            <li><a href="home-2.html">Home 2 (Cinema Pods)</a></li>
+          </ul>
+        </li>
+        <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+        <li><a href="movies-snacks.html" class="nav-link active">Movies &amp; Snacks</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="parties.html" class="nav-link">Private Events</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="control-toggle-btn theme-toggle-btn" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="control-toggle-btn rtl-toggle-btn" aria-label="Toggle Direction">RTL</button>
+        <a href="login.html" class="btn btn-primary btn-sm desktop-login-btn">Login</a>
+        <button class="hamburger-btn" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-links">
+      <li class="nav-dropdown">
+        <button class="nav-link dropdown-toggle">
+          Home Concepts
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 (Classic Luxe)</a></li>
+          <li><a href="home-2.html">Home 2 (Cinema Pods)</a></li>
+        </ul>
+      </li>
+      <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+      <li><a href="movies-snacks.html" class="nav-link active">Movies &amp; Snacks</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="parties.html" class="nav-link">Private Events</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="register.html" class="btn btn-secondary">Create Account</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =======================================================
+         SECTION 1: INNER PAGE HERO (EXACT STANDARDIZED HEIGHT)
+         ======================================================= -->
+    <section class="inner-page-hero">
+      <img src="assets/images/hero-movies-snacks.jpg" alt="Vellora Cinema Concession Stand and Film Vault" class="inner-hero-bg">
+      <div class="inner-hero-overlay"></div>
+      <div class="container inner-hero-content">
+        <span class="eyebrow eyebrow-warm">✦ Vault &amp; Culinary Concessions</span>
+        <h1>Movies &amp; Gastronomy</h1>
+        <p>Explore thousands of 4K cinematic titles, connect your own devices, and indulge in gourmet theater dishes delivered to your armchair.</p>
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Home</a></li>
+          <li><span>/</span></li>
+          <li class="current">Movies &amp; Snacks</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 2: MOVIE VAULT & GENRE CATEGORIES
+         ======================================================= -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">The Film Vault</span>
+          <h2>4,000+ Lossless Cinematic Masterpieces</h2>
+          <p class="section-desc">Select any title on arrival or stream your personal collection via high-speed 4K HDMI plug-and-play inputs.</p>
+        </div>
+
+        <div class="grid-4">
+          <!-- Genre 1 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/movie-action-genre.jpg" alt="Action and Sci-Fi Genre Cinema">
+              <span class="card-badge">900+ Titles</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Action &amp; Sci-Fi</h3>
+              <p class="card-desc">High-octane blockbusters, space epics, and thrilling franchise marathons mixed in explosive Dolby Atmos surround.</p>
+              <div class="card-footer">
+                <span class="spec-item" style="color: var(--color-accent); font-weight: 700;">4K HDR &bull; Atmos</span>
+                <a href="dashboard.html" class="btn btn-outline btn-sm">Select Films</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Genre 2 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/movie-animation-genre.jpg" alt="Animation and Family Genre Cinema">
+              <span class="card-badge">750+ Titles</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Family &amp; Animation</h3>
+              <p class="card-desc">Vibrant animated adventures, heartfelt family stories, and award-winning international anime collections.</p>
+              <div class="card-footer">
+                <span class="spec-item" style="color: var(--color-accent); font-weight: 700;">All Ages &bull; 4K</span>
+                <a href="dashboard.html" class="btn btn-outline btn-sm">Select Films</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Genre 3 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/movie-romance-genre.jpg" alt="Romance and Drama Genre Cinema">
+              <span class="card-badge">820+ Titles</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Romance &amp; Drama</h3>
+              <p class="card-desc">Intimate date-night stories, timeless modern romances, and critically acclaimed festival indie favorites.</p>
+              <div class="card-footer">
+                <span class="spec-item" style="color: var(--color-accent); font-weight: 700;">Curated Date Night</span>
+                <a href="dashboard.html" class="btn btn-outline btn-sm">Select Films</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Genre 4 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/movie-classic-genre.jpg" alt="Film Noir and Classic Cinema">
+              <span class="card-badge">1,100+ Titles</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Film Noir &amp; Classics</h3>
+              <p class="card-desc">Restored 4K Criterion film noir masterpieces, golden-age Hollywood legends, and iconic world cinema.</p>
+              <div class="card-footer">
+                <span class="spec-item" style="color: var(--color-accent); font-weight: 700;">Criterion Remasters</span>
+                <a href="dashboard.html" class="btn btn-outline btn-sm">Select Films</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 3: GOURMET CONCESSION MENU
+         ======================================================= -->
+    <section class="section-spacing section-ambient-luxe">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow eyebrow-warm">Artisanal Concessions</span>
+          <h2>Crafted Fresh for Your Showtime</h2>
+          <p class="section-desc">Prepared by our on-site culinary team and served silently to your side table during the screening.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Concession 1 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/snack-sliders.jpg" alt="Wagyu Cinema Sliders with Rosemary Fries">
+              <span class="card-badge">🍔 Prime Wagyu</span>
+              <span class="card-badge-bottom">⏱ Fresh Grill</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <span class="card-meta-pill">★ SIGNATURE</span>
+                <span class="card-location">📍 Executive Kitchen</span>
+              </div>
+              <h3 class="card-title">Wagyu Beef Sliders</h3>
+              <p class="card-desc">Trio of grilled Japanese Wagyu patties on toasted brioche with caramelized shallot jam and aged gruyère.</p>
+              <div class="card-spec-box">
+                <span><strong>Cut:</strong> Wagyu</span>
+                <span><strong>Cheese:</strong> Aged Gruyère</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="amount">$22</span>
+                  <span class="old-price">$28</span>
+                  <span class="period">/ trio</span>
+                </div>
+                <button class="btn-card-action btn-card-action-alt" onclick="window.showVelloraToast('Added Wagyu Sliders to your reservation order!')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Item
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concession 2 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/snack-platters.jpg" alt="Gourmet Artisanal Charcuterie Board">
+              <span class="card-badge">🧀 Grazing Favorite</span>
+              <span class="card-badge-bottom">⏱ 2–4 Guests</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <span class="card-meta-pill">★ CHARCUTERIE</span>
+                <span class="card-location">📍 Cold Larder</span>
+              </div>
+              <h3 class="card-title">Artisan Charcuterie Board</h3>
+              <p class="card-desc">Prosciutto di Parma, smoked gouda, honeycomb, Marcona almonds, fresh figs, and seeded artisan crisps.</p>
+              <div class="card-spec-box">
+                <span><strong>Cured:</strong> Prosciutto</span>
+                <span><strong>Cheese:</strong> Smoked Gouda</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="amount">$28</span>
+                  <span class="old-price">$34</span>
+                  <span class="period">/ board</span>
+                </div>
+                <button class="btn-card-action btn-card-action-alt" onclick="window.showVelloraToast('Added Charcuterie Board to your reservation order!')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Item
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concession 3 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/snack-crispy-fries-truffle.jpg" alt="Parmesan Truffle Crispy Fries">
+              <span class="card-badge">🍟 Warm &amp; Crispy</span>
+              <span class="card-badge-bottom">⏱ Fried Fresh</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <span class="card-meta-pill">★ SIDES</span>
+                <span class="card-location">📍 Hot Station</span>
+              </div>
+              <h3 class="card-title">Parmesan Truffle Fries</h3>
+              <p class="card-desc">Hand-cut russet fries tossed with shaved 24-month Parmigiano-Reggiano, white truffle oil, and roasted garlic aioli.</p>
+              <div class="card-spec-box">
+                <span><strong>Cheese:</strong> 24mo Reggiano</span>
+                <span><strong>Dip:</strong> Garlic Aioli</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="amount">$15</span>
+                  <span class="old-price">$19</span>
+                  <span class="period">/ basket</span>
+                </div>
+                <button class="btn-card-action btn-card-action-alt" onclick="window.showVelloraToast('Added Truffle Fries to your reservation order!')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Item
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concession 4 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/snack-caramel-popcorn-pro.jpg" alt="Kettle Glazed Sea Salt Caramel Corn">
+              <span class="card-badge">🍿 Freshly Popped</span>
+              <span class="card-badge-bottom">⏱ Warm Served</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <span class="card-meta-pill">★ POPCORN</span>
+                <span class="card-location">📍 Popcorn Bar</span>
+              </div>
+              <h3 class="card-title">Kettle Glazed Caramel Corn</h3>
+              <p class="card-desc">Crisp non-GMO heirloom kernels slow-coated in dark amber Madagascar vanilla caramel with Maldon sea salt flakes.</p>
+              <div class="card-spec-box">
+                <span><strong>Corn:</strong> Heirloom</span>
+                <span><strong>Salt:</strong> Maldon Flakes</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="amount">$12</span>
+                  <span class="old-price">$16</span>
+                  <span class="period">/ bowl</span>
+                </div>
+                <button class="btn-card-action btn-card-action-alt" onclick="window.showVelloraToast('Added Caramel Corn to your reservation order!')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Item
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concession 5 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/snack-churro-bites.jpg" alt="Warm Cinnamon Churro Bites">
+              <span class="card-badge">✨ Sweet Bite</span>
+              <span class="card-badge-bottom">⏱ Fresh Baked</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <span class="card-meta-pill">★ PATISSERIE</span>
+                <span class="card-location">📍 Pastry Oven</span>
+              </div>
+              <h3 class="card-title">Cinnamon Sugar Churros</h3>
+              <p class="card-desc">Warm Spanish churro bites tossed in Saigon cinnamon sugar, served with warm Valrhona chocolate dipping sauce.</p>
+              <div class="card-spec-box">
+                <span><strong>Spice:</strong> Saigon Cinnamon</span>
+                <span><strong>Dip:</strong> Warm Valrhona</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="amount">$14</span>
+                  <span class="old-price">$18</span>
+                  <span class="period">/ order</span>
+                </div>
+                <button class="btn-card-action btn-card-action-alt" onclick="window.showVelloraToast('Added Churros to your reservation order!')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Item
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concession 6 -->
+          <div class="cinema-card">
+            <div class="card-media">
+              <img src="assets/images/snack-mocktail-flight.jpg" alt="Mixology Craft Mocktail Tasting Flight">
+              <span class="card-badge">🍸 Mixology</span>
+              <span class="card-badge-bottom">⏱ 3 Glasses</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <span class="card-meta-pill">★ CRAFT</span>
+                <span class="card-location">📍 Cocktail Bar</span>
+              </div>
+              <h3 class="card-title">Craft Mocktail Trio</h3>
+              <p class="card-desc">Flight of three handcrafted sparkling botanicals: Yuzu Elderflower, Smoked Blackberry Rosemary, and Blood Orange Spritz.</p>
+              <div class="card-spec-box">
+                <span><strong>Flavors:</strong> Yuzu / Orange</span>
+                <span><strong>Alcohol:</strong> 0.0% ABV</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="amount">$24</span>
+                  <span class="old-price">$30</span>
+                  <span class="period">/ flight</span>
+                </div>
+                <button class="btn-card-action btn-card-action-alt" onclick="window.showVelloraToast('Added Mocktail Trio to your reservation order!')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Item
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 4: CINEMA PAIRING COMBOS & PACKAGES
+         ======================================================= -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Curated Packages</span>
+          <h2>Concession Pairing Experiences</h2>
+          <p class="section-desc">Bundled culinary pairings designed to complement your movie genre and party size.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-tier-name">The Date Night Duo</h3>
+              <div class="pricing-price">$48</div>
+              <p style="color: var(--color-muted); font-size: 0.85rem;">Tailored for 2 Guests</p>
+            </div>
+            <ul class="pricing-features">
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1x Large Truffle Popcorn</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2x Craft Mocktails or Sodas</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1x Belgian Lava Cake with Gelato</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> In-seat complimentary refills</li>
+            </ul>
+            <button class="btn btn-outline" onclick="window.showVelloraToast('Date Night Duo added to booking bundle!')">Select Combo</button>
+          </div>
+
+          <div class="pricing-card featured">
+            <span class="featured-ribbon">Most Popular</span>
+            <div class="pricing-header">
+              <h3 class="pricing-tier-name">Family Feast Box</h3>
+              <div class="pricing-price">$75</div>
+              <p style="color: var(--color-muted); font-size: 0.85rem;">Tailored for 4–6 Guests</p>
+            </div>
+            <ul class="pricing-features">
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2x Large Butter &amp; Caramel Popcorn</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1x Loaded Nachos Platter</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1x Cinnamon Churro Bites</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 4x Cinema Drinks of Choice</li>
+            </ul>
+            <button class="btn btn-primary" onclick="window.showVelloraToast('Family Feast Box added to booking bundle!')">Select Combo</button>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-tier-name">VIP Premier Grazing</h3>
+              <div class="pricing-price">$110</div>
+              <p style="color: var(--color-muted); font-size: 0.85rem;">Tailored for 8–10 Guests</p>
+            </div>
+            <ul class="pricing-features">
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1x Large Artisan Charcuterie Board</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2x Wagyu Beef Slider Platters</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2x Truffle Parmesan Fries</li>
+              <li class="pricing-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Butler Refresh Service</li>
+            </ul>
+            <button class="btn btn-outline" onclick="window.showVelloraToast('VIP Premier Grazing added to booking bundle!')">Select Combo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 5: DIETARY & CUSTOM CATERING CTA
+         ======================================================= -->
+    <section class="fullwidth-cta-section">
+      <img src="assets/images/cta-snacks-concessions.jpg" alt="Vellora Cinema Concession Dining" class="cta-bg">
+      <div class="cta-overlay"></div>
+      
+      <div class="container">
+        <div class="cta-content">
+          <span class="eyebrow eyebrow-warm">✦ Tailored Menus</span>
+          <h2>Dietary Preferences &amp; Custom Catering</h2>
+          <p>We accommodate gluten-free, vegan, kosher, and halal preferences. Pre-order your favorite dishes during room reservation.</p>
+          <div class="cta-buttons">
+            <a href="dashboard.html" class="btn btn-primary btn-lg">Pre-Order with Room</a>
+            <a href="pricing.html" class="btn btn-secondary btn-lg">Explore Full Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-wrapper" style="color: #FFFFFF;">
+            <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="8" width="40" height="32" rx="6" stroke="url(#navLogoGradM)" stroke-width="2.5" />
+              <polygon points="16,16 34,24 16,32" fill="url(#navBeamGradM)" />
+              <circle cx="16" cy="24" r="4.5" fill="#6B2D5C" />
+              <polygon points="21,21 28,24 21,27" fill="#FFFFFF" />
+            </svg>
+            <span class="brand-name-text">VELLORA</span>
+          </a>
+          <p>"Your Movie. Your Room. Your Night." The premier private screening suite and boutique cinema lounge.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Private Suites</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Velvet Starlight Duo</a></li>
+            <li><a href="rooms.html">Artisan Family Lounge</a></li>
+            <li><a href="rooms.html">The Noir Sanctuary</a></li>
+            <li><a href="rooms.html">Celebration Suite</a></li>
+            <li><a href="rooms.html">Grand Auditorium</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Experiences</h4>
+          <ul class="footer-links">
+            <li><a href="movies-snacks.html">Movie Vault</a></li>
+            <li><a href="movies-snacks.html">Concession Menu</a></li>
+            <li><a href="pricing.html">Screening Packages</a></li>
+            <li><a href="parties.html">Private Events</a></li>
+            <li><a href="dashboard.html">Client Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Concierge &amp; Hours</h4>
+          <p style="color: rgba(247, 244, 240, 0.7); font-size: 0.9rem; margin-bottom: 12px;">7 Days a Week: 11:00 AM – 2:00 AM</p>
+          <p style="color: rgba(247, 244, 240, 0.7); font-size: 0.9rem; margin-bottom: 16px;">1042 Cinema Boulevard, Suite 500</p>
+          <a href="dashboard.html" class="btn btn-outline btn-sm" style="color: #FFFFFF; border-color: rgba(255,255,255,0.2);">Client Portal</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 VELLORA Private Theaters. All rights reserved.</span>
+        <span>Cinema Noir Aesthetic &bull; Pure Soundproof Isolation</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
