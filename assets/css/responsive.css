@@ -39,6 +39,13 @@ input, select, textarea, button {
   }
 }
 
+@media (max-width: 1280px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
 /* ==========================================================================
    2. LAPTOP, TABLET & IPAD (max-width: 1199px)
    ========================================================================== */
@@ -540,24 +547,20 @@ input, select, textarea, button {
 
   .card-spec-box {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     font-size: 0.72rem !important;
-    padding: 6px 10px !important;
-    gap: 6px 10px;
-    white-space: normal;
-    overflow: visible;
-    min-height: 34px;
+    padding: 6px 8px !important;
+    gap: 4px;
+    white-space: nowrap;
+    min-height: 36px;
     height: auto;
   }
 
   .card-spec-box span,
   .card-spec-box strong {
     font-size: 0.72rem !important;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
+    white-space: nowrap;
   }
 
   /* --- Movie Vault & Snack Grids --- */
@@ -872,20 +875,16 @@ input, select, textarea, button {
   .card-spec-box {
     font-size: 0.7rem !important;
     padding: 6px 8px !important;
-    gap: 6px !important;
-    flex-wrap: wrap !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    min-height: 32px !important;
+    gap: 4px !important;
+    white-space: nowrap;
+    min-height: 34px !important;
     height: auto !important;
   }
 
   .card-spec-box span,
   .card-spec-box strong {
     font-size: 0.7rem !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
+    white-space: nowrap;
   }
 
   /* --- Movie Vault Single / Double Column Grid --- */

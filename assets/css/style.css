@@ -959,6 +959,8 @@ button, input, select, textarea {
   color: var(--color-muted);
   line-height: 1.5;
   margin-bottom: 12px;
+  min-height: 3.2em;
+  flex-grow: 1;
 }
 
 /* Feature / Spec Box (Key-Value Attribute Container matching reference) */
@@ -975,15 +977,15 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px 10px;
-  flex-wrap: wrap;
-  min-height: 34px;
+  gap: 4px;
+  white-space: nowrap;
+  min-height: 38px;
   height: auto;
   flex-shrink: 0;
 }
 
 .card-spec-box span {
-  white-space: normal;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 3px;
@@ -1030,35 +1032,57 @@ button, input, select, textarea {
   margin-top: auto;
   padding-top: 10px;
   border-top: 1px solid var(--color-border);
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 6px;
+  flex-wrap: nowrap;
+  min-height: 44px;
+  width: 100%;
+}
+
+.card-footer .spec-item {
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 54%;
+  margin-bottom: 0;
+  flex-shrink: 1;
+}
+
+.card-footer .btn,
+.card-footer .btn-outline,
+.card-footer .btn-sm {
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .price-tag {
   display: inline-flex;
   align-items: baseline;
-  gap: 5px;
+  gap: 4px;
   font-family: var(--font-heading);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .price-tag .amount {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--color-accent);
   line-height: 1;
 }
 
 .price-tag .old-price {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   text-decoration: line-through;
   color: var(--color-muted);
   opacity: 0.7;
 }
 
 .price-tag .period {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--color-muted);
   white-space: nowrap;
 }
@@ -1067,14 +1091,14 @@ button, input, select, textarea {
   background: linear-gradient(135deg, #6B2D5C 0%, #4A1C3F 100%) !important;
   color: #FFFFFF !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  padding: 8px 16px;
+  padding: 7px 12px;
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   box-shadow: 0 4px 14px rgba(107, 45, 92, 0.35);
   transition: all var(--transition-fast);
   white-space: nowrap;
