@@ -698,9 +698,11 @@ button, input, select, textarea {
   --inner-hero-height: 420px;
 }
 
-/* --- Standardized Inner Page Hero (Exact 420px height) --- */
+/* --- Standardized Inner Page Hero (Dynamic Responsive Flex Height) --- */
 .inner-page-hero {
-  height: var(--inner-hero-height);
+  min-height: var(--inner-hero-height, 420px);
+  height: auto;
+  padding: 60px 20px 50px 20px;
   position: relative;
   display: flex;
   align-items: center;
