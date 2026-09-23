@@ -963,6 +963,29 @@ button, input, select, textarea {
   flex-grow: 1;
 }
 
+/* --- About Page: Team / Curators Cards (Center Aligned) --- */
+.team-card .card-body {
+  text-align: center;
+  align-items: center;
+}
+
+.team-card .eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+}
+
+.team-card .card-title {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.team-card .card-desc {
+  text-align: center;
+  min-height: auto;
+}
+
 /* Feature / Spec Box (Key-Value Attribute Container matching reference) */
 .card-spec-box {
   background: var(--color-surface-soft);
