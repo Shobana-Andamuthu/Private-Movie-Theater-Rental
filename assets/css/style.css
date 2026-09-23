@@ -3060,10 +3060,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   left: 12px;
 }
 
-[dir="rtl"] .dashboard-layout {
-  grid-template-columns: 1fr 280px;
-}
-
 /* --- Home 1: Studio Calibration & Optics Matrix --- */
 .h1-calibration-grid {
   display: grid;
