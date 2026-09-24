@@ -2676,7 +2676,8 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 .h2-panoramic-hero {
   position: relative;
   min-height: 90vh;
-  padding: 100px 0 80px 0;
+  margin-top: var(--header-height, 80px);
+  padding: 80px 0 80px 0;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -151,12 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTopBtn = document.querySelector('.back-to-top');
   if (backToTopBtn) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 550) {
         backToTopBtn.classList.add('visible');
       } else {
         backToTopBtn.classList.remove('visible');
       }
-    });
+    }, { passive: true });
 
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
